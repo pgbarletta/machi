@@ -1,0 +1,256 @@
+{
+ "metadata": {
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.3-final"
+  },
+  "orig_nbformat": 2,
+  "kernelspec": {
+   "name": "python3",
+   "display_name": "Python 3",
+   "language": "python"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2,
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 45,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "v = np.array([1, 2, 3, -6, 11])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 101,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "v.clear()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 102,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "execute_result",
+     "data": {
+      "text/plain": [
+       "[]"
+      ]
+     },
+     "metadata": {},
+     "execution_count": 102
+    }
+   ],
+   "source": [
+    "v"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 99,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def get_sum_metrics(predictions, metrics=[]):\n",
+    "    for i in range(3):\n",
+    "        metrics.append(lambda x: x + i)\n",
+    "\n",
+    "    sum_metrics = 0\n",
+    "    for metric in metrics:\n",
+    "        sum_metrics += metric(predictions)\n",
+    "\n",
+    "    return sum_metrics"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 79,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def scalar_function(x, y):\n",
+    "    if x <= y:\n",
+    "        return x*y\n",
+    "    else:\n",
+    "        return x/y"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 82,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "execute_result",
+     "data": {
+      "text/plain": [
+       "1.5"
+      ]
+     },
+     "metadata": {},
+     "execution_count": 82
+    }
+   ],
+   "source": [
+    "scalar_function(3, 2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 83,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "v = [[1.], [2.]]\n",
+    "w = [ [1.], [.5] ]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 86,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "g = np.vectorize(scalar_function)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 90,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a = np.arange(10)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 91,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "execute_result",
+     "data": {
+      "text/plain": [
+       "array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])"
+      ]
+     },
+     "metadata": {},
+     "execution_count": 91
+    }
+   ],
+   "source": [
+    "a"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 92,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "execute_result",
+     "data": {
+      "text/plain": [
+       "(10,)"
+      ]
+     },
+     "metadata": {},
+     "execution_count": 92
+    }
+   ],
+   "source": [
+    "np.shape(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 96,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a = np.arange(10).reshape(10, 1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 97,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "execute_result",
+     "data": {
+      "text/plain": [
+       "array([[0],\n",
+       "       [1],\n",
+       "       [2],\n",
+       "       [3],\n",
+       "       [4],\n",
+       "       [5],\n",
+       "       [6],\n",
+       "       [7],\n",
+       "       [8],\n",
+       "       [9]])"
+      ]
+     },
+     "metadata": {},
+     "execution_count": 97
+    }
+   ],
+   "source": [
+    "a"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 98,
+   "metadata": {},
+   "outputs": [
+    {
+     "output_type": "execute_result",
+     "data": {
+      "text/plain": [
+       "(10, 1)"
+      ]
+     },
+     "metadata": {},
+     "execution_count": 98
+    }
+   ],
+   "source": [
+    "np.shape(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ]
+}
